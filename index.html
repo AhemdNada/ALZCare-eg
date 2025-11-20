@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ALZCare — Alzheimer's Clinical System</title>
+  <meta name="description" content="ALZCare — Clinical system for managing Alzheimer's patients. Trusted tools for doctors, family, and caregivers.">
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Compiled Tailwind CSS -->
+  <link rel="stylesheet" href="dist/styles.css">
+
+  <!-- AOS CSS (CDN) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 bg-bgpurple overflow-x-hidden">
+
+  <!-- Header / Navbar -->
+  <header class="fixed left-1/2 top-5 z-50 w-full -translate-x-1/2 px-4 sm:px-6" id="top">
+    <div class="section-shell">
+      <nav class="flex items-center justify-between h-16 rounded-full border border-white/70 bg-white px-4 sm:px-6 shadow-soft-xl relative" aria-label="Top navigation">
+        <!-- Logo - Left -->
+        <div class="flex items-center gap-3 flex-shrink-0">
+          <a href="#top" class="logo-container flex items-center gap-3 group" aria-label="CareMind home">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="rounded-2xl shadow-soft-lg group-hover:shadow-soft-xl transition-shadow duration-300 ease-gentle" aria-hidden="true">
+              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#6A0DAD"/><stop offset="1" stop-color="#4B0A7A"/></linearGradient></defs>
+              <rect width="24" height="24" rx="6" fill="url(#g)"></rect>
+              <path d="M7 12c1.5-3 5-3 6 0 1 3-4 4-6 2-2-2-1-3-0-3z" fill="white" opacity="0.95"></path>
+            </svg>
+            <span class="font-semibold text-lg text-darkpurple">ALZCare</span>
+          </a>
+        </div>
+
+        <!-- Desktop links - Centered -->
+        <div class="hidden md:flex items-center gap-4 lg:gap-6 absolute left-1/2 -translate-x-1/2">
+          <a class="nav-link" href="#why">Why</a>
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#how">How it Works</a>
+          <a class="nav-link" href="#testimonials">Testimonials</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </div>
+
+        <!-- Mobile hamburger - Right -->
+        <div class="md:hidden flex-shrink-0">
+          <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu" class="p-2 rounded-full border border-gray-200/60 bg-white/80 shadow-sm focus:ring-2 focus:ring-offset-2 focus:outline-none">
+            <svg id="hamburgerIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile slide-over menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-[60] hidden">
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300" id="mobileMenuBackdrop" tabindex="-1" aria-hidden="true"></div>
+      <div class="absolute right-0 top-0 h-full w-full max-w-sm bg-white shadow-2xl overflow-y-auto mobile-menu-panel" role="dialog" aria-modal="true" aria-labelledby="mobileMenuTitle">
+        <div class="sticky top-0 bg-white border-b border-gray-200 p-4 z-10 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect width="24" height="24" rx="5" fill="#6A0DAD"></rect>
+            </svg>
+            <span id="mobileMenuTitle" class="font-semibold text-lg text-darkpurple">ALZCare</span>
+          </div>
+          <button id="mobileCloseBtn" aria-label="Close menu" class="p-2 rounded-full border border-gray-200 bg-white hover:bg-gray-50 shadow-sm focus:ring-2 focus:ring-primary focus:outline-none transition-colors">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="p-6">
+          <ul class="space-y-2 text-sm font-medium text-gray-700">
+            <li><a href="#why" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>Why</a></li>
+            <li><a href="#features" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>Features</a></li>
+            <li><a href="#how" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>How it Works</a></li>
+            <li><a href="#testimonials" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>Testimonials</a></li>
+            <li><a href="#pricing" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>Pricing</a></li>
+            <li><a href="#contact" class="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-lightAccent/30 hover:text-darkpurple transition-colors" data-nav>Contact</a></li>
+          </ul>
+
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <a href="#contact" class="btn-primary w-full block text-center">Request Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 lg:pt-32">
+    <!-- HERO -->
+    <section class="relative py-12 lg:py-20">
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-bgpurple to-bgpurple"></div>
+        <div class="absolute -top-24 -left-32 h-80 w-80 rounded-full bg-lightAccent/40 blur-3xl opacity-60"></div>
+        <div class="absolute top-36 -right-24 h-80 w-80 rounded-full bg-primary/30 blur-3xl opacity-50"></div>
+      </div>
+
+      <div class="section-shell">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <div data-aos="fade-up" data-aos-duration="900">
+              <p class="hero-badge">
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-soft-pulse"></span>
+                Empowering Alzheimer’s specialists with intelligent care tools
+              </p>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight" data-aos="fade-up" data-aos-duration="900" data-aos-delay="80">
+              AI-powered clinical platform for Alzheimer’s monitoring and decision support
+            </h1>
+
+            <p class="text-base sm:text-lg text-gray-700 max-w-prose" data-aos="fade-up" data-aos-duration="900" data-aos-delay="160">
+              ALZCare provides clinicians with real-time patient monitoring, emotion tracking, medication reminders, and AI-assisted insights — all in a secure, unified platform.
+            </p>
+
+            <div class="flex flex-wrap gap-3 items-center" data-aos="fade-up" data-aos-duration="900" data-aos-delay="240">
+              <a href="#contact" class="btn-primary" role="button">Book a Demo</a>
+              <a href="#features" class="btn-outline" role="button">Explore Features</a>
+            </div>
+
+            <!-- Key trust stats -->
+            <div class="mt-6 flex flex-wrap gap-4 sm:gap-6" data-aos="fade-up" data-aos-duration="900" data-aos-delay="320">
+              <div class="pill-stat">
+                <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span class="font-semibold text-darkpurple">92%</span>
+                <span class="text-gray-600">doctor approval rating</span>
+              </div>
+              <div class="pill-stat">
+                <span class="h-2 w-2 rounded-full bg-sky-500"></span>
+                <span class="font-semibold text-darkpurple">24/7</span>
+                <span class="text-gray-600">AI-driven monitoring</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right visual mockup -->
+          <div class="lg:col-span-6 relative hidden lg:flex justify-center" aria-hidden="true">
+            <div class="w-4/5 hero-mockup rounded-3xl overflow-hidden shadow-soft-xl hero-gradient relative" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300" style="min-height:380px;">
+              <!-- glow ring -->
+              <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 h-24 w-3/4 rounded-full bg-primary/40 blur-3xl opacity-70"></div>
+
+              <!-- Mock dashboard card inside gradient -->
+              <div class="relative p-8 flex gap-6 items-start">
+                <div class="w-72 glass rounded-2xl p-4 card">
+                  <div class="flex items-center justify-between gap-3">
+                    <div>
+                      <h3 class="font-semibold text-lg">Patient: Sarah A.</h3>
+                      <p class="text-xs text-gray-600">79 • Early-stage</p>
+                    </div>
+                    <div class="text-right text-xs">
+                      <div class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700">
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Stable
+                      </div>
+                      <div class="mt-1 text-[11px] text-gray-500">Last checked 10m ago</div>
+                    </div>
+                  </div>
+                  <hr class="my-3 border-dashed border-white/60">
+                  <div class="text-sm text-gray-700 space-y-2">
+                    <p><strong>Reminders:</strong> Medication at 09:00</p>
+                    <p><strong>Mood:</strong> Calm</p>
+                    <p><strong>Risk:</strong> Low wander risk</p>
+                  </div>
+                </div>
+
+                <!-- phone mock -->
+                <div class="w-40 h-80 bg-white rounded-3xl p-3 shadow-soft-lg border border-white/60 translate-y-2">
+                  <div class="bg-gray-50 h-full rounded-2xl p-2.5 flex flex-col justify-between">
+                    <div class="h-2.5 w-16 bg-gray-200 rounded-full mx-auto mb-3"></div>
+                    <div class="space-y-2.5">
+                      <div class="h-4 bg-purple-100 rounded-full w-5/6"></div>
+                      <div class="h-4 bg-purple-200 rounded-full w-4/6"></div>
+                      <div class="h-4 bg-purple-100 rounded-full w-2/3"></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between text-[11px] text-gray-600">
+                      <span class="h-6 px-2 rounded-full bg-white shadow-sm flex items-center">Alert log</span>
+                      <span class="text-gray-400">Today</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> <!-- grid -->
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="py-14">
+      <div class="section-shell">
+        <header class="text-center mb-10 max-w-2xl mx-auto">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">Why ALZCare</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">Designed for real Alzheimer’s care workflows</h2>
+          <p class="mt-3 text-gray-600" data-aos="fade-up" data-aos-delay="80">AI-driven tools built for doctors, caregivers, and families — with accuracy, safety, and continuous monitoring at the core.</p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="card card-hover" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-start gap-4">
+              <div class="p-2 rounded-xl bg-gradient-to-br from-primary to-darkpurple text-white shadow-soft-lg">
+                <!-- Chart/Analytics icon for AI insights -->
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 3v18h18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 17V9M12 17V5M6 17v-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="18" cy="17" r="1.5" fill="white"/>
+                  <circle cx="12" cy="17" r="1.5" fill="white"/>
+                  <circle cx="6" cy="17" r="1.5" fill="white"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-base">AI-guided clinical insights</h3>
+                <p class="mt-1 text-sm text-gray-600">Real-time emotion analysis, cognitive changes, and behavior trends tailored for each patient.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-hover" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-start gap-4">
+              <div class="p-2 rounded-xl bg-gradient-to-br from-primary to-darkpurple text-white shadow-soft-lg">
+                <!-- Bell/Alert icon -->
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="18" cy="6" r="4" fill="white"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-base">Instant smart alerts</h3>
+                <p class="mt-1 text-sm text-gray-600">Wandering detection, medication misses, and emergency triggers delivered instantly to doctors and families.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-hover" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-start gap-4">
+              <div class="p-2 rounded-xl bg-gradient-to-br from-primary to-darkpurple text-white shadow-soft-lg">
+                <!-- People/Collaboration icon -->
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2" fill="none"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-base">Family–doctor collaboration</h3>
+                <p class="mt-1 text-sm text-gray-600">Share activity summaries, mood reports, and location updates securely with authorized family members.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-hover" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex items-start gap-4">
+              <div class="p-2 rounded-xl bg-gradient-to-br from-primary to-darkpurple text-white shadow-soft-lg">
+                <!-- Shield/Security icon -->
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-base">Medical-grade data protection</h3>
+                <p class="mt-1 text-sm text-gray-600">Encrypted data, strict access control, and full audit trails built for healthcare compliance.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-14 section-muted">
+      <div class="section-shell">
+        <header class="text-center mb-10 max-w-2xl mx-auto">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">Platform</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">All the tools your Alzheimer care team needs in one intelligent platform</h2>
+          <p class="mt-3 text-gray-600" data-aos="fade-up" data-aos-delay="80">Unify patient monitoring, smart reminders, and caregiver communication into a single, AI-powered workspace designed for dementia care.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Feature blocks -->
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">
+                🧠
+              </div>
+              <div>
+                <h3 class="font-semibold">Smart Memory Support & Reminders</h3>
+                <p class="mt-1 text-sm text-gray-600">Set medication schedules, appointments, and daily routines with AI-assisted prompts that help patients stay oriented and on track.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">📍</div>
+              <div>
+                <h3 class="font-semibold">Real-Time Location Tracking & Safety Alerts</h3>
+                <p class="mt-1 text-sm text-gray-600">Monitor patient movement with geo-fencing, detect wandering early, and instantly notify caregivers when intervention is needed.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">🙂</div>
+              <div>
+                <h3 class="font-semibold">Mood Detection & Social Engagement Monitoring</h3>
+                <p class="mt-1 text-sm text-gray-600">Analyze emotional patterns and social activity to support early intervention and more personalized care planning.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="400">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">📊</div>
+              <div>
+                <h3 class="font-semibold">AI-Generated Reports & Clinical Insights</h3>
+                <p class="mt-1 text-sm text-gray-600">Create clear, data-driven summaries for clinicians and securely share progress reports with families.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="500">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">🩺</div>
+              <div>
+                <h3 class="font-semibold">Unified Clinician Dashboard</h3>
+                <p class="mt-1 text-sm text-gray-600">Manage patient cases, review alerts, and perform quick actions through a clean and organized interface built for fast decision-making.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card card-hover" data-aos="fade-up" data-aos-delay="600">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-2xl bg-lightAccent text-darkpurple text-xl">🔒</div>
+              <div>
+                <h3 class="font-semibold">Medical-Grade Security & Privacy Controls</h3>
+                <p class="mt-1 text-sm text-gray-600">Ensure safe data handling with role-based access, complete activity logs, and compliance with clinical privacy standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="py-14">
+      <div class="section-shell max-w-5xl">
+        <header class="text-center mb-10">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">How it works</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">From doctor enrollment to smart patient monitoring in three steps</h2>
+          <p class="mt-3 text-gray-600" data-aos="fade-up" data-aos-delay="80">Start using ALZCare in days — doctors join the platform, add their patients, and the system begins delivering real-time insights without disrupting existing workflows.</p>
+        </header>
+
+        <div class="relative">
+          <!-- connecting line -->
+          <div class="hidden sm:block absolute left-1/2 transform -translate-x-1/2 top-12 h-40 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/0"></div>
+          <div class="space-y-8 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6">
+            <div class="text-center p-4" data-aos="fade-right" data-aos-delay="100">
+              <div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-darkpurple text-white flex items-center justify-center font-bold shadow-soft-lg">1</div>
+              <h3 class="mt-4 font-semibold">Join the platform</h3>
+              <p class="mt-2 text-sm text-gray-600">Doctors create their account, set their clinic preferences, and connect caregivers or family members when needed.</p>
+            </div>
+
+            <div class="text-center p-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-darkpurple text-white flex items-center justify-center font-bold shadow-soft-lg">2</div>
+              <h3 class="mt-4 font-semibold">Add patients & enable monitoring</h3>
+              <p class="mt-2 text-sm text-gray-600">Each doctor adds their patients, sets risk levels, and instantly starts receiving AI-powered events, reminders, and safety alerts.</p>
+            </div>
+
+            <div class="text-center p-4" data-aos="fade-left" data-aos-delay="300">
+              <div class="mx-auto w-16 h-16 rounded-full bg-gradient-to-br from-primary to-darkpurple text-white flex items-center justify-center font-bold shadow-soft-lg">3</div>
+              <h3 class="mt-4 font-semibold">Take action & share updates</h3>
+              <p class="mt-2 text-sm text-gray-600">Review alerts, document decisions, generate reports, and securely share updates with families or the care team.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-14 section-muted">
+      <div class="section-shell max-w-6xl">
+        <header class="text-center mb-10">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">Testimonials</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">What clinicians say</h2>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- testimonial card -->
+          <figure class="card card-hover" data-aos="flip-left" data-aos-delay="100">
+            <div class="flex items-center gap-4">
+              <img alt="Dr. Lina photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' rx='14' fill='%236A0DAD'/><text x='50%' y='55%' font-size='28' text-anchor='middle' fill='white' font-family='sans-serif'>L</text></svg>" class="w-12 h-12 rounded-full">
+              <figcaption>
+                <div class="font-semibold">Dr. Lina Farouk</div>
+                <div class="text-sm text-gray-600">Neurologist</div>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-sm text-gray-700 leading-relaxed">"ALZCare gave our clinic early-warning signals we previously missed. The reports are concise and clinically useful."</blockquote>
+          </figure>
+
+          <figure class="card card-hover" data-aos="flip-left" data-aos-delay="200">
+            <div class="flex items-center gap-4">
+              <img alt="Dr. Omar photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' rx='14' fill='%234B0A7A'/><text x='50%' y='55%' font-size='28' text-anchor='middle' fill='white'>O</text></svg>" class="w-12 h-12 rounded-full">
+              <figcaption>
+                <div class="font-semibold">Dr. Omar H.</div>
+                <div class="text-sm text-gray-600">Geriatric Psychiatrist</div>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-sm text-gray-700 leading-relaxed">"The family connectivity feature reduced our phone calls by half and improved medication adherence."</blockquote>
+          </figure>
+
+          <figure class="card card-hover" data-aos="flip-left" data-aos-delay="300">
+            <div class="flex items-center gap-4">
+              <img alt="Dr. Maya photo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' rx='14' fill='%236A0DAD'/><text x='50%' y='55%' font-size='28' text-anchor='middle' fill='white'>M</text></svg>" class="w-12 h-12 rounded-full">
+              <figcaption>
+                <div class="font-semibold">Dr. Maya S.</div>
+                <div class="text-sm text-gray-600">Memory Clinic Director</div>
+              </figcaption>
+            </div>
+            <blockquote class="mt-4 text-sm text-gray-700 leading-relaxed">"HIPAA-grade security and audit logs made the procurement process much easier."</blockquote>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-14">
+      <div class="section-shell max-w-6xl">
+        <header class="text-center mb-10">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">Pricing</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">Simple plans for every clinic size</h2>
+          <p class="mt-3 text-gray-600" data-aos="fade-up" data-aos-delay="80">Start small and scale as your dementia program grows.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div class="card card-hover text-center flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="text-lg font-semibold">Starter</h3>
+            <div class="text-3xl font-extrabold my-4">Free</div>
+            <ul class="text-sm text-gray-600 space-y-2 flex-1">
+              <li>Up to 5 patients</li>
+              <li>Basic reminders</li>
+              <li>Email support</li>
+            </ul>
+            <div class="mt-6">
+              <button class="btn-outline">Get started</button>
+            </div>
+          </div>
+
+          <div class="card card-hover border-2 border-primary bg-white text-center relative flex flex-col" data-aos="fade-up" data-aos-delay="200">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary text-white text-xs font-semibold shadow-soft-lg">Most popular</div>
+            <div class="px-4 py-3 rounded-t-2xl bg-gradient-to-r from-lightAccent/90 to-lightAccent/40">
+              <h3 class="text-lg font-semibold">Clinical</h3>
+            </div>
+            <div class="text-3xl font-extrabold my-4">$199<span class="text-sm font-medium">/mo</span></div>
+            <ul class="text-sm text-gray-600 space-y-2 flex-1">
+              <li>Up to 100 patients</li>
+              <li>Real-time alerts &amp; reports</li>
+              <li>Priority support</li>
+            </ul>
+            <div class="mt-6">
+              <button class="btn-primary">Talk to sales</button>
+            </div>
+          </div>
+
+          <div class="card card-hover text-center flex flex-col" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="text-lg font-semibold">Enterprise</h3>
+            <div class="text-3xl font-extrabold my-4">Custom</div>
+            <ul class="text-sm text-gray-600 space-y-2 flex-1">
+              <li>Unlimited patients</li>
+              <li>Custom integrations</li>
+              <li>Dedicated success team</li>
+            </ul>
+            <div class="mt-6">
+              <button class="btn-outline">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / REQUEST DEMO -->
+    <section id="contact" class="py-14 section-muted">
+      <div class="section-shell max-w-4xl">
+        <header class="text-center mb-8">
+          <p class="text-xs font-semibold tracking-[0.22em] text-primary/80 uppercase" data-aos="fade-up">Contact</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-bold tracking-tight" data-aos="fade-up" data-aos-delay="40">Request a demo</h2>
+          <p class="mt-3 text-gray-600" data-aos="fade-up" data-aos-delay="80">Fill this short form and our team will reach out within one business day.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+          <form id="contactForm" class="space-y-4 p-6 card" novalidate aria-label="Request demo form" data-aos="fade-up" data-aos-delay="100">
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Full name <span class="text-red-500">*</span></label>
+              <input id="name" name="name" required type="text" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white/70 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent" />
+              <p class="mt-1 text-xs text-red-600 hidden" id="nameError">Name is required.</p>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
+              <input id="email" name="email" required type="email" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white/70 shadow-sm focus:ring-2 focus:ring-primary focus:border-transparent" />
+              <p class="mt-1 text-xs text-red-600 hidden" id="emailError">Please enter a valid email.</p>
+            </div>
+
+            <div>
+              <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
+              <input id="role" name="role" type="text" placeholder="Doctor / Nurse / Care Coordinator" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white/70 shadow-sm" />
+            </div>
+
+            <div>
+              <label for="clinic" class="block text-sm font-medium text-gray-700">Clinic / Hospital</label>
+              <input id="clinic" name="clinic" type="text" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white/70 shadow-sm" />
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+              <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-lg border border-gray-200 bg-white/70 shadow-sm"></textarea>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <button type="submit" class="btn-primary">Send request</button>
+              <div id="formSuccess" class="text-sm text-green-600 hidden" role="status" aria-live="polite">Request sent (demo only — no backend).</div>
+            </div>
+          </form>
+
+          <aside class="space-y-6 p-6 card" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="font-semibold">Alternative contact</h3>
+            <p class="text-sm text-gray-600">Email: <a href="mailto:hello@alzcare.example" class="underline">hello@alzcare.example</a></p>
+            <p class="text-sm text-gray-600">Phone: <a href="tel:+18005551234" class="underline">+1 (800) 555-1234</a></p>
+
+            <div>
+              <h4 class="font-medium">Security</h4>
+              <p class="text-sm text-gray-600">We follow strict privacy practices, encrypt data at rest and in transit, and keep audit logs for clinical safety.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white/95 border-t mt-12">
+    <div class="section-shell py-8 flex flex-col md:flex-row justify-between items-start gap-6">
+      <div class="max-w-md">
+        <div class="flex items-center gap-3">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect width="24" height="24" rx="5" fill="#6A0DAD"></rect></svg>
+          <div>
+            <div class="font-semibold">ALZCare</div>
+            <div class="text-sm text-gray-600">Compassionate technology for dementia care.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-12 text-sm">
+        <div>
+          <div class="font-medium text-gray-800">Company</div>
+          <ul class="mt-2 text-gray-600 space-y-1">
+            <li><a href="#why" class="hover:text-darkpurple">Why</a></li>
+            <li><a href="#pricing" class="hover:text-darkpurple">Pricing</a></li>
+            <li><a href="#contact" class="hover:text-darkpurple">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="font-medium text-gray-800">Follow</div>
+          <div class="mt-2 flex gap-3 text-gray-500">
+            <a aria-label="Twitter" href="#" class="hover:text-darkpurple">Twitter</a>
+            <a aria-label="LinkedIn" href="#" class="hover:text-darkpurple">LinkedIn</a>
+            <a aria-label="GitHub" href="#" class="hover:text-darkpurple">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-sm text-gray-500 py-4 border-t border-gray-100 bg-white/80">© <span id="yearSpan"></span> ALZCare — all rights reserved.</div>
+  </footer>
+
+  <!-- DONATION WIDGET -->
+  <!-- Floating donation button (left side, fixed; bottom-left on mobile) -->
+  <button
+    id="donationBtn"
+    class="transition-all duration-300 ease-gentle group focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/70"
+    aria-label="Open donation modal"
+    aria-expanded="false"
+    aria-controls="donationModal"
+  >
+    <div class="donation-widget-button bg-gradient-to-b from-primary to-darkpurple text-white shadow-soft-xl hover:shadow-soft-xl transition-all duration-300 ease-gentle" style="box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);">
+      <div class="flex flex-col items-center justify-center gap-2 h-full">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="flex-shrink-0">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-semibold text-sm donation-text-vertical">Donation</span>
+      </div>
+    </div>
+  </button>
+
+  <!-- Donation Modal (full-screen overlay) -->
+  <div
+    id="donationModal"
+    class="fixed inset-0 z-50 hidden donation-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="donationModalTitle"
+    aria-describedby="donationModalDescription"
+  >
+    <!-- Backdrop with blur -->
+    <div
+      id="donationBackdrop"
+      class="absolute inset-0 bg-black/50 backdrop-blur-md transition-opacity duration-300 donation-backdrop"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Modal Content -->
+    <div class="absolute inset-0 overflow-y-auto">
+      <div class="min-h-full flex items-center justify-center p-4">
+        <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-soft-xl donation-modal-content">
+          <!-- Close button -->
+          <button
+            id="donationCloseBtn"
+            class="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/70 transition-colors"
+            aria-label="Close donation modal"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- Modal Body -->
+          <div class="p-6 sm:p-8">
+            <!-- Header -->
+            <header class="mb-6">
+              <h2 id="donationModalTitle" class="text-2xl sm:text-3xl font-bold text-darkpurple mb-2">
+                Support ALZCare
+              </h2>
+              <p id="donationModalDescription" class="text-gray-600">
+                Your donation helps us continue providing compassionate technology for Alzheimer's care and research.
+              </p>
+            </header>
+
+            <!-- Donation Form -->
+            <form id="donationForm" class="space-y-6" novalidate>
+              <!-- Preset Amounts -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-3">Choose an amount</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <button
+                    type="button"
+                    class="donation-amount-btn px-4 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-primary hover:bg-lightAccent/30 font-semibold text-darkpurple transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/70"
+                    data-amount="25"
+                    aria-label="Donate $25"
+                  >
+                    $25
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-amount-btn px-4 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-primary hover:bg-lightAccent/30 font-semibold text-darkpurple transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/70"
+                    data-amount="50"
+                    aria-label="Donate $50"
+                  >
+                    $50
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-amount-btn px-4 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-primary hover:bg-lightAccent/30 font-semibold text-darkpurple transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/70"
+                    data-amount="100"
+                    aria-label="Donate $100"
+                  >
+                    $100
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-amount-btn px-4 py-3 rounded-xl border-2 border-gray-200 bg-white hover:border-primary hover:bg-lightAccent/30 font-semibold text-darkpurple transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/70"
+                    data-amount="250"
+                    aria-label="Donate $250"
+                  >
+                    $250
+                  </button>
+                </div>
+              </div>
+
+              <!-- Custom Amount Input -->
+              <div>
+                <label for="donationCustomAmount" class="block text-sm font-medium text-gray-700 mb-2">
+                  Custom amount <span class="text-red-500">*</span>
+                </label>
+                <div class="relative">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 font-semibold">$</span>
+                  <input
+                    id="donationCustomAmount"
+                    name="amount"
+                    type="text"
+                    inputmode="decimal"
+                    pattern="[0-9]+(\.[0-9]{1,2})?"
+                    placeholder="0.00"
+                    required
+                    class="w-full pl-8 pr-4 py-3 rounded-xl border-2 border-gray-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-200"
+                    aria-describedby="donationAmountError donationAmountHelp"
+                  />
+                </div>
+                <p id="donationAmountError" class="mt-1 text-xs text-red-600 hidden" role="alert" aria-live="polite">
+                  Please enter a valid positive amount (e.g., 25.00).
+                </p>
+                <p id="donationAmountHelp" class="mt-1 text-xs text-gray-500">
+                  Enter amount in USD (minimum $1.00)
+                </p>
+              </div>
+
+              <!-- Payment Method Selection -->
+              <div>
+                <label for="donationPaymentMethod" class="block text-sm font-medium text-gray-700 mb-2">
+                  Payment method <span class="text-red-500">*</span>
+                </label>
+                <select
+                  id="donationPaymentMethod"
+                  name="paymentMethod"
+                  required
+                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all duration-200"
+                  aria-describedby="donationPaymentError"
+                >
+                  <option value="">Select payment method</option>
+                  <option value="card">Card</option>
+                  <option value="apple-pay">Apple Pay</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+                <p id="donationPaymentError" class="mt-1 text-xs text-red-600 hidden" role="alert" aria-live="polite">
+                  Please select a payment method.
+                </p>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="btn-primary w-full py-4 text-lg"
+                >
+                  Donate Now
+                </button>
+              </div>
+
+              <!-- Terms Text -->
+              <p class="text-xs text-gray-500 text-center mt-4">
+                By donating, you agree to our terms of service. All donations are secure and processed through trusted payment providers.
+                <!-- TODO: Add actual payment processing integration here -->
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom styles for mobile menu -->
+  <style>
+    /* Mobile Menu Styles - Fixed for proper display */
+    #mobileMenu {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      z-index: 60 !important;
+      visibility: visible !important;
+    }
+    
+    #mobileMenu.hidden {
+      display: none !important;
+      visibility: hidden !important;
+    }
+    
+    #mobileMenu:not(.hidden) {
+      display: block !important;
+      visibility: visible !important;
+    }
+    
+    /* Mobile menu panel - slide from right */
+    #mobileMenu .mobile-menu-panel,
+    #mobileMenu > div:last-child {
+      position: absolute !important;
+      right: 0 !important;
+      top: 0 !important;
+      height: 100vh !important;
+      width: 100% !important;
+      max-width: 384px !important; /* max-w-sm = 384px */
+      background: white !important;
+      box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15) !important;
+      transform: translateX(100%) !important;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      will-change: transform !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    
+    #mobileMenu:not(.hidden) .mobile-menu-panel,
+    #mobileMenu:not(.hidden) > div:last-child {
+      transform: translateX(0) !important;
+    }
+    
+    /* Mobile menu backdrop */
+    #mobileMenuBackdrop {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      background: rgba(0, 0, 0, 0.5) !important;
+      backdrop-filter: blur(4px) !important;
+      -webkit-backdrop-filter: blur(4px) !important;
+      opacity: 0 !important;
+      transition: opacity 0.3s ease-out !important;
+    }
+    
+    #mobileMenu:not(.hidden) #mobileMenuBackdrop {
+      opacity: 1 !important;
+    }
+    
+    /* Responsive width for mobile menu on small screens */
+    @media (max-width: 640px) {
+      #mobileMenu .mobile-menu-panel,
+      #mobileMenu > div:last-child {
+        max-width: 85vw !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      #mobileMenu .mobile-menu-panel,
+      #mobileMenu > div:last-child {
+        max-width: 90vw !important;
+      }
+    }
+    
+    /* Ensure menu is scrollable */
+    #mobileMenu .mobile-menu-panel,
+    #mobileMenu > div:last-child {
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+      overflow: hidden !important;
+      position: fixed !important;
+      width: 100% !important;
+    }
+    
+    /* Smooth animations */
+    @media (prefers-reduced-motion: reduce) {
+      #mobileMenu > div:last-child,
+      #mobileMenuBackdrop {
+        transition: opacity 0.1s ease-out !important;
+      }
+      #mobileMenu > div:last-child {
+        transform: none !important;
+      }
+    }
+    
+    /* Ensure menu content is visible */
+    #mobileMenu > div:last-child > * {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+  </style>
+
+  <!-- Custom styles for donation widget -->
+  <style>
+    /* Donation widget - ensure visibility */
+    #donationBtn {
+      position: fixed !important;
+      z-index: 60 !important;
+      visibility: visible !important;
+    }
+
+    /* Desktop: vertical button bar on left edge */
+    @media (min-width: 768px) {
+      #donationBtn {
+        left: 0 !important;
+        top: 50% !important;
+        width: 60px !important;
+        height: auto !important;
+        opacity: 0;
+        transform: translateY(-50%) translateX(-100%);
+        animation: slideInLeftDesktop 0.8s ease-out 0.5s forwards;
+      }
+
+      .donation-widget-button {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 0 1rem 1rem 0 !important;
+        padding: 1.5rem 0.75rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      .donation-text-vertical {
+        writing-mode: vertical-rl !important;
+        text-orientation: upright !important;
+        letter-spacing: 0.2em !important;
+        white-space: nowrap !important;
+        margin-top: 0.5rem !important;
+      }
+
+      @keyframes slideInLeftDesktop {
+        0% {
+          transform: translateY(-50%) translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(-50%) translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    /* Mobile: button at bottom-left as pill */
+    @media (max-width: 767px) {
+      #donationBtn {
+        bottom: 1.5rem !important;
+        left: 1.5rem !important;
+        top: auto !important;
+        width: auto !important;
+        height: auto !important;
+        opacity: 0;
+        transform: translateY(100%);
+        animation: slideInUpMobile 0.8s ease-out 0.5s forwards;
+      }
+
+      .donation-widget-button {
+        border-radius: 1.5rem !important;
+        padding: 0.75rem 1rem !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 0.5rem !important;
+      }
+
+      .donation-text-vertical {
+        writing-mode: horizontal-tb !important;
+        display: none !important;
+      }
+
+      @keyframes slideInUpMobile {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+    }
+
+    /* Ensure button is always visible */
+    .donation-widget-button {
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    /* Modal animations */
+    .donation-backdrop {
+      opacity: 0;
+    }
+
+    .donation-modal.show .donation-backdrop {
+      opacity: 1;
+    }
+
+    .donation-modal-content {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+
+    .donation-modal.show .donation-modal-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Selected amount button style */
+    .donation-amount-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--lightAccent);
+      color: var(--darkpurple);
+    }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      .donation-widget-button,
+      .donation-backdrop,
+      .donation-modal-content {
+        animation: none;
+        transition: none;
+      }
+
+      .donation-modal.show .donation-backdrop,
+      .donation-modal.show .donation-modal-content {
+        transition: opacity 0.1s ease-out;
+      }
+    }
+
+    /* Focus trap visual indicator (for debugging - remove in production if needed) */
+    .donation-modal:focus-within {
+      outline: none;
+    }
+  </style>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Main JS -->
+  <script src="src/js/main.js"></script>
+</body>
+</html>

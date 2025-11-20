@@ -1,0 +1,14 @@
+{
+    "name": "alzheimers-clinical-landing",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "tailwindcss -i ./src/css/tailwind.css -o ./dist/styles.css --watch",
+      "build": "tailwindcss -i ./src/css/tailwind.css -o ./dist/styles.css --minify",
+      "prepare": "node -e \"require('fs').mkdirSync('dist',{recursive:true});\""
+    },
+    "devDependencies": {
+      "tailwindcss": "^3.4.18"
+    }
+  }
+  
