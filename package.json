@@ -5,7 +5,7 @@
     "scripts": {
       "dev": "tailwindcss -i ./src/css/tailwind.css -o ./dist/styles.css --watch",
       "build": "tailwindcss -i ./src/css/tailwind.css -o ./dist/styles.css --minify",
-      "vercel-build": "npm run build",
+      "vercel-build": "npm run build && echo 'Build completed successfully'",
       "prepare": "node -e \"require('fs').mkdirSync('dist',{recursive:true});\""
     },
     "devDependencies": {
